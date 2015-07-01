@@ -97,11 +97,9 @@ if(build)
                 "include/pcl/${SUBSYS_NAME}/${SUBSUBSYS_NAME}/impl/scene_tree.hpp")
 
   # Qt stuff
-  if (QT4_FOUND AND VTK_USE_QVTK)
-		QT4_WRAP_UI(ui_srcs ${uis})
-		QT4_WRAP_CPP(moc_srcs ${moc_incs} OPTIONS -DBOOST_TT_HAS_OPERATOR_HPP_INCLUDED)
-		QT4_ADD_RESOURCES(resource_srcs ${resources})
-	endif (QT4_FOUND AND VTK_USE_QVTK)
+  QT4_WRAP_UI(ui_srcs ${uis})
+  QT4_WRAP_CPP(moc_srcs ${moc_incs} OPTIONS -DBOOST_TT_HAS_OPERATOR_HPP_INCLUDED)
+  QT4_ADD_RESOURCES(resource_srcs ${resources})
 
   # Organize files
   SOURCE_GROUP("Resources" FILES ${uis} ${resources} ${EXE_ICON})
