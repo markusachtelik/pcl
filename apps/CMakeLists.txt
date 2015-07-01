@@ -74,7 +74,6 @@ if(build)
 
     if (QT4_FOUND AND VTK_USE_QVTK)
 
-      include(${QT_USE_FILE})
       # Manual registration demo
       QT4_WRAP_UI(manual_registration_ui src/manual_registration/manual_registration.ui)
       QT4_WRAP_CPP(manual_registration_moc include/pcl/apps/manual_registration.h OPTIONS -DBOOST_TT_HAS_OPERATOR_HPP_INCLUDED -DBOOST_NO_TEMPLATE_PARTIAL_SPECIALIZATION)
